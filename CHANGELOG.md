@@ -12,6 +12,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Fixed
 
+- Fix channel file-search not available in mobile _community pr!_ ([#4527](https://github.com/lbryio/lbry-desktop/pull/4527))
+
 ## [0.47.0] - [2020-07-13]
 
 ### Added
