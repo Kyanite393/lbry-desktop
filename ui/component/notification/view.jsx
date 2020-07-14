@@ -8,10 +8,12 @@ import { formatLbryUrlForWeb } from 'util/url';
 import { useHistory } from 'react-router';
 
 type Props = {
-  notification: Notification,
+  notification: WebNotification,
   menuButton: boolean,
   children: any,
 };
+
+const NOTIFICATION_CREATOR_SUBSCRIBER = 'creator_subscriber';
 
 export default function Notification(props: Props) {
   const { notification, menuButton = false } = props;
@@ -21,7 +23,7 @@ export default function Notification(props: Props) {
 
   let icon;
   switch (notification.notification_rule) {
-    case 'creator_subscriber':
+    case NOTIFICATION_CREATOR_SUBSCRIBER:
       icon = ICONS.SUBSCRIBE;
       break;
     default:
@@ -29,15 +31,15 @@ export default function Notification(props: Props) {
   }
 
   const Wrapper = menuButton
-    ? props => (
-        <a className="menu__link--notification" onClick={() => push(notificationLink)}>
-          {props.children}
-        </a>
-      )
-    : props => (
+    ? (props: { children: any }) => (
         <MenuItem className="menu__link--notification" onSelect={() => push(notificationLink)}>
           {props.children}
         </MenuItem>
+      )
+    : (props: { children: any }) => (
+        <a className="menu__link--notification" onClick={() => push(notificationLink)}>
+          {props.children}
+        </a>
       );
 
   return (

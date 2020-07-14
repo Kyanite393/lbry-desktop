@@ -85,6 +85,11 @@
   display: flex;
   align-items: flex-start;
   padding: var(--spacing-s);
+
+  .icon__wrapper {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
 }
 
 .menu__link--all-notifications {
@@ -94,8 +99,4 @@
   margin-right: auto;
   font-weight: var(--font-weight-bold);
   margin-top: var(--spacing-m);
-
-  &:hover {
-    // background-color: transparent;
-  }
 }

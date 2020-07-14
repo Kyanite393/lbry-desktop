@@ -1,5 +1,5 @@
 // @flow
-declare type Notification = {
+declare type WebNotification = {
   active_at: string,
   created_at: string,
   id: number,
