@@ -156,6 +156,10 @@ svg + .button__label,
   }
 }
 
+.button-toggle--more {
+  margin-bottom: var(--spacing-s);
+}
+
 .button-toggle__label {
   @extend label;
   display: inline-block;
